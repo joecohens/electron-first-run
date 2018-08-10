@@ -1,0 +1,31 @@
+{
+  "name": "electron-first-run",
+  "version": "1.0.0",
+  "description": "Detect first run on Electron Apps",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "author": {
+    "name": "Joseph Cohen"
+  },
+  "dependencies": {
+    "electron-store": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "electron": "^2.0.7",
+    "execa": "^0.10.0",
+    "xo": "^0.22.0"
+  },
+  "xo": {
+    "space": 2,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
