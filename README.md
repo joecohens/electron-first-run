@@ -2,7 +2,7 @@
 
 Check if it's the first time an Electron App runs with [electron-store](https://github.com/sindresorhus/electron-store)
 
-This pacakge it's based on [first-run](https://github.com/sindresorhus/first-run) by @sindresorhus, keeping the API as a drop in replacement for Electron.
+This pacakge it's based on [first-run](https://github.com/sindresorhus/first-run) by [@sindresorhus](https://github.com/sindresorhus), keeping the API as a drop in replacement for Electron.
 
 ## Install
 
