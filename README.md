@@ -1,5 +1,7 @@
 # electron-first-run
 
+[![Build Status: Linux and macOS](https://travis-ci.org/joecohens/electron-first-run.svg?branch=master)](https://travis-ci.org/joecohens/electron-first-run) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/clt0lv851qbkc0ax/branch/master?svg=true)](https://ci.appveyor.com/project/joecohens/electron-first-run/branch/master)
+
 Check if it's the first time an Electron App runs with [electron-store](https://github.com/sindresorhus/electron-store)
 
 This pacakge it's based on [first-run](https://github.com/sindresorhus/first-run) by [@sindresorhus](https://github.com/sindresorhus), keeping the API as a drop in replacement for Electron.
