@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const electron = require('electron');
 
+const app = electron.app || electron.remote.app;
+
 const getConfigPath = opts => {
   opts = Object.assign({name: '.electron-app-first-run'}, opts);
 
-  const configPath = path.join(electron.app.getPath('userData'), opts.name);
+  const configPath = path.join(app.getPath('userData'), opts.name);
 
   return configPath;
 };
