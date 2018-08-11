@@ -7,8 +7,6 @@ process.on('uncaughtException', err => {
   process.exit(1); // eslint-disable-line no-process-exit
 });
 
-const isFirstRun = firstRun();
-
-console.log(isFirstRun);
+console.log(firstRun());
 
 electron.app.quit();
