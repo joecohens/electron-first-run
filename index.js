@@ -23,7 +23,6 @@ const firstRun = opts => {
   } catch (err) {
     if (err.code === 'ENOENT') {
       makeDir.sync(path.join(app.getPath('userData'), 'FirstRun'));
-      
       return firstRun(opts);
     }
 
