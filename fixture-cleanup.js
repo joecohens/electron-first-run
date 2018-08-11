@@ -9,6 +9,4 @@ process.on('uncaughtException', err => {
 
 firstRun.clear();
 
-console.log(firstRun.getStore().path);
-
 electron.app.quit();

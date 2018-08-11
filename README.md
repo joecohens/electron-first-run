@@ -2,7 +2,7 @@
 
 [![Build Status: Linux and macOS](https://travis-ci.org/joecohens/electron-first-run.svg?branch=master)](https://travis-ci.org/joecohens/electron-first-run) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/xsvax2qy6lao3y25?svg=true)](https://ci.appveyor.com/project/joecohens/electron-first-run/branch/master)
 
-Check if it's the first time an Electron App runs with [electron-store](https://github.com/sindresorhus/electron-store)
+Check if it's the first time an Electron App runs.
 
 This pacakge it's based on [first-run](https://github.com/sindresorhus/first-run) by [@sindresorhus](https://github.com/sindresorhus), keeping the API as a drop in replacement for Electron.
 
@@ -31,20 +31,15 @@ console.log(isFirstRun);
 #### options.name
 
 Type: `string`
-Default: `config`
+Default: `.electron-app-first-run`
 
 Name of the storage file (without extension).
 
-This is useful if you want multiple storage files for your app. Or if you're making a reusable Electron module that persists some data, in which case you should not use the name `config`.
+This is useful if you want multiple storage files for your app. Or if you're making a reusable Electron module that persists some data, in which case you should not use the default name.
 
 ### firstRun.clear()
 
 Clear the state.
-
-### firstRun.getStore()
-
-Get the current `electron-store` config.
-
 
 ## License
 
