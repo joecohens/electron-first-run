@@ -1,26 +1,34 @@
-const Store = require('electron-store');
+const fs = require('fs');
+const path = require('path');
+const electron = require('electron');
 
-const getStore = opts => {
-  opts = Object.assign({defaults: {firstRun: true}}, opts);
+const getConfigPath = opts => {
+  opts = Object.assign({name: '.electron-app-first-run'}, opts);
 
-  return new Store(opts);
+  const configPath = path.join(electron.app.getPath('userData'), opts.name);
+
+  return configPath;
 };
 
 const firstRun = opts => {
-  const conf = getStore(opts);
-  const isFirstRun = conf.get('firstRun');
+  const configPath = getConfigPath(opts);
 
-  if (isFirstRun === true) {
-    conf.set('firstRun', false);
+  if (fs.existsSync(configPath)) {
+    return false;
   }
 
-  return isFirstRun;
+  fs.writeFileSync(configPath, '');
+
+  return true;
 };
 
 const clear = opts => {
-  getStore(opts).set('firstRun', true);
+  const configPath = getConfigPath(opts);
+
+  if (fs.existsSync(configPath)) {
+    fs.unlinkSync(configPath);
+  }
 };
 
 module.exports = firstRun;
 module.exports.clear = clear;
-module.exports.getStore = getStore;

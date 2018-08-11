@@ -1,10 +1,6 @@
-import fs from 'fs';
 import electron from 'electron';
 import test from 'ava';
 import execa from 'execa';
-
-// See https://github.com/sindresorhus/conf for more extensive tests
-// See https://github.com/sindresorhus/electron-store for more tests
 
 const run = async file => {
   const result = await execa.stdout(electron, [file], {
@@ -39,7 +35,6 @@ test('it should reset first run', async t => {
 });
 
 test.afterEach.always(async () => {
-  const storagePath = await run('fixture-cleanup.js');
-  fs.unlinkSync(storagePath);
+  await run('fixture-cleanup.js');
 });
 

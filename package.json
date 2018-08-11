@@ -23,9 +23,7 @@
     "start",
     "config"
   ],
-  "dependencies": {
-    "electron-store": "^2.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.25.0",
     "electron": "^2.0.7",
