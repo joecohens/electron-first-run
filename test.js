@@ -1,4 +1,3 @@
-import fs from 'fs';
 import electron from 'electron';
 import test from 'ava';
 import execa from 'execa';
@@ -24,21 +23,21 @@ test('is first run', async t => {
 });
 
 test('is not first run', async t => {
-  await run('fixture.js');
   const isFirstRun = await run('fixture.js');
-  t.is(isFirstRun, 'false');
+  const isSecondRun = await run('fixture.js');
+  t.is(isFirstRun, 'true');
+  t.is(isSecondRun, 'false');
 });
 
 test('it should reset first run', async t => {
   const isFirstRun = await run('fixture.js');
   await run('fixture2.js');
-  const isSecondFirstRun = await run('fixture.js');
+  const isSecondRun = await run('fixture.js');
   t.is(isFirstRun, 'true');
-  t.is(isSecondFirstRun, 'true');
+  t.is(isSecondRun, 'true');
 });
 
 test.afterEach.always(async () => {
-  const storagePath = await run('fixture-cleanup.js');
-  fs.unlinkSync(storagePath);
+  await run('fixture-cleanup.js');
 });
 
