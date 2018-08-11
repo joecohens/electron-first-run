@@ -13,6 +13,16 @@
   "author": {
     "name": "Joseph Cohen"
   },
+  "keywords": [
+    "electron",
+    "first",
+    "init",
+    "initial",
+    "run",
+    "time",
+    "start",
+    "config"
+  ],
   "dependencies": {
     "electron-store": "^2.0.0"
   },
