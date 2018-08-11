@@ -7,7 +7,7 @@
     "index.js"
   ],
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava -s"
   },
   "author": {
     "name": "Joseph Cohen"
