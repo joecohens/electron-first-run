@@ -1,5 +1,5 @@
 const electron = require('electron');
-const {getStore} = require('.');
+const {clear} = require('.');
 
 // Prevent Electron from never exiting when an exception happens
 process.on('uncaughtException', err => {
@@ -7,6 +7,6 @@ process.on('uncaughtException', err => {
   process.exit(1); // eslint-disable-line no-process-exit
 });
 
-console.log(getStore().path);
+clear();
 
 electron.app.quit();
