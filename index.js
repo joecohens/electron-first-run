@@ -5,7 +5,7 @@ const electron = require('electron');
 const app = electron.app || electron.remote.app;
 
 const getConfigPath = opts => {
-  opts = Object.assign({name: '.electron-app-first-run'}, opts);
+  opts = Object.assign({name: 'electron-app-first-run'}, opts);
 
   const configPath = path.join(app.getPath('userData'), opts.name);
 
