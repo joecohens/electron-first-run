@@ -6,7 +6,7 @@ const makeDir = require('make-dir');
 const getConfigPath = opts => {
   opts = Object.assign({name: '.electron-app-first-run'}, opts);
 
-  const configPath = path.join(app.getPath('userData'), opts.name);
+  const configPath = path.join(app.getPath('userData'), 'FirstRun', opts.name);
 
   return configPath;
 };
@@ -22,7 +22,7 @@ const firstRun = opts => {
     fs.writeFileSync(configPath, '');
   } catch (err) {
     if (err.code === 'ENOENT') {
-      makeDir.sync(configPath);
+      makeDir.sync(path.join(app.getPath('userData'), 'FirstRun'));
       firstRun(opts);
       return;
     }
