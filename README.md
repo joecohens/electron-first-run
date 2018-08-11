@@ -31,7 +31,7 @@ console.log(isFirstRun);
 #### options.name
 
 Type: `string`
-Default: `electron-app-first-run`
+Default: `.electron-app-first-run`
 
 Name of the storage file (without extension).
 

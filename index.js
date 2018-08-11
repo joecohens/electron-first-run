@@ -1,11 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const electron = require('electron');
-
-const app = electron.app || electron.remote.app;
+const {app} = require('electron');
+const makeDir = require('make-dir');
 
 const getConfigPath = opts => {
-  opts = Object.assign({name: 'electron-app-first-run'}, opts);
+  opts = Object.assign({name: '.electron-app-first-run'}, opts);
 
   const configPath = path.join(app.getPath('userData'), opts.name);
 
@@ -19,7 +18,17 @@ const firstRun = opts => {
     return false;
   }
 
-  fs.writeFileSync(configPath, '');
+  try {
+    fs.writeFileSync(configPath, '');
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      makeDir.sync(configPath);
+      firstRun(opts);
+      return;
+    }
+
+    throw err;
+  }
 
   return true;
 };

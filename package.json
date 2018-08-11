@@ -23,7 +23,9 @@
     "start",
     "config"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "make-dir": "^1.3.0"
+  },
   "devDependencies": {
     "ava": "^0.25.0",
     "electron": "^2.0.7",
