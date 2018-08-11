@@ -2,7 +2,6 @@ import fs from 'fs';
 import electron from 'electron';
 import test from 'ava';
 import execa from 'execa';
-import sleep from 'sleep-promise';
 
 // See https://github.com/sindresorhus/conf for more extensive tests
 // See https://github.com/sindresorhus/electron-store for more tests
@@ -33,9 +32,7 @@ test('is not first run', async t => {
 
 test('it should reset first run', async t => {
   const isFirstRun = await run('fixture.js');
-  await sleep(500);
   await run('fixture-cleanup.js');
-  await sleep(500);
   const isSecondRun = await run('fixture.js');
   t.is(isFirstRun, 'true');
   t.is(isSecondRun, 'true');
