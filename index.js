@@ -20,13 +20,13 @@ const firstRun = opts => {
 
   try {
     fs.writeFileSync(configPath, '');
-  } catch (err) {
-    if (err.code === 'ENOENT') {
+  } catch (error) {
+    if (error.code === 'ENOENT') {
       makeDir.sync(path.join(app.getPath('userData'), 'FirstRun'));
       return firstRun(opts);
     }
 
-    throw err;
+    throw error;
   }
 
   return true;
