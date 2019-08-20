@@ -1,6 +1,6 @@
 {
   "name": "electron-first-run",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Detect first run on Electron Apps",
   "repository": "https://github.com/joecohens/electron-first-run.git",
   "license": "MIT",
